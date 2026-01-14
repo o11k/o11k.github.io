@@ -15,3 +15,11 @@ body::before {
   background-size: 100% 4px;
   z-index: 9999;
 }
+
+.blinking {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
