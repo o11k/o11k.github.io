@@ -11,3 +11,7 @@ html, body, #container {
     background-color: var(--background);
     color: var(--foreground);
 }
+
+html {
+    scroll-padding-top: 30px;
+}
