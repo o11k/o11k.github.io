@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <link rel="icon" href="/favicon.png?v={{ now.Unix }}" type="image/png">
+    <link rel="canonical" href="{{ .Permalink }}">
     <meta http-equiv="onion-location" content="{{ .Site.Params.darknet.tor }}{{ .RelPermalink }}" />
     <meta http-equiv="i2p-location"   content="{{ .Site.Params.darknet.i2p }}{{ .RelPermalink }}" />
     {{ with (templates.Defer (dict "key" "global")) }}

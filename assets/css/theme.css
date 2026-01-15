@@ -7,7 +7,7 @@
 /* Dark mode <-> checkbox (xor) @media dark */
 body { --darkmode: 0; }
 body:has(#dark-mode-toggle:checked) { --darkmode: 1; }
-#dark-mode-toggle-icon::before { content: "🌞"; }
+#dark-mode-toggle-icon::before { content: "🌞"; cursor: pointer; }
 #dark-mode-toggle:checked + #dark-mode-toggle-icon::before { content: "🌙"; }
 @media (prefers-color-scheme: dark) {
     body { --darkmode: 1; }
