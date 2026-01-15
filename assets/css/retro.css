@@ -9,7 +9,7 @@ body::before {
   pointer-events: none;
   background: linear-gradient(
     to bottom,
-    color-mix(in srgb, var(--primary) 2%, transparent) 50%,
+    color-mix(in srgb, transparent, var(--primary) 2%) 50%,
     transparent 50%
   );
   background-size: 100% 4px;
