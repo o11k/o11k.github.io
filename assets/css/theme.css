@@ -1,0 +1,112 @@
+:root {
+    --font-size: 16px;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+}
+
+/* Dark mode <-> checkbox (xor) @media dark */
+body:has(#dark-mode-toggle:not(:checked)) { --darkmode: 0; }
+body:has(#dark-mode-toggle:checked) { --darkmode: 1; }
+#dark-mode-toggle-icon::before { content: "🌞"; }
+#dark-mode-toggle:checked + #dark-mode-toggle-icon::before { content: "🌙"; }
+@media (prefers-color-scheme: dark) {
+    body:has(#dark-mode-toggle:not(:checked)) { --darkmode: 1; }
+    body:has(#dark-mode-toggle:checked) { --darkmode: 0; }
+    #dark-mode-toggle-icon::before { content: "🌙"; }
+    #dark-mode-toggle:checked + #dark-mode-toggle-icon::before { content: "🌞"; }
+}
+
+/* Calculate colors based on darkmode */
+body {
+    --background:             color-mix(in srgb, #f5e6d3,  oklch(0.145 0 0)          calc(var(--darkmode)*100%));
+    --foreground:             color-mix(in srgb, #2d1810,  oklch(0.985 0 0)          calc(var(--darkmode)*100%));
+    --card:                   color-mix(in srgb, #ede0cc,  oklch(0.145 0 0)          calc(var(--darkmode)*100%));
+    --card-foreground:        color-mix(in srgb, #2d1810,  oklch(0.985 0 0)          calc(var(--darkmode)*100%));
+    --popover:                color-mix(in srgb, #f5e6d3,  oklch(0.145 0 0)          calc(var(--darkmode)*100%));
+    --popover-foreground:     color-mix(in srgb, #2d1810,  oklch(0.985 0 0)          calc(var(--darkmode)*100%));
+    --primary:                color-mix(in srgb, #8b6f47,  oklch(0.985 0 0)          calc(var(--darkmode)*100%));
+    --primary-foreground:     color-mix(in srgb, #f5e6d3,  oklch(0.205 0 0)          calc(var(--darkmode)*100%));
+    --secondary:              color-mix(in srgb, #d4b896,  oklch(0.269 0 0)          calc(var(--darkmode)*100%));
+    --secondary-foreground:   color-mix(in srgb, #2d1810,  oklch(0.985 0 0)          calc(var(--darkmode)*100%));
+    --muted:                  color-mix(in srgb, #e6d5be,  oklch(0.269 0 0)          calc(var(--darkmode)*100%));
+    --muted-foreground:       color-mix(in srgb, #6b5943,  oklch(0.708 0 0)          calc(var(--darkmode)*100%));
+    --accent:                 color-mix(in srgb, #c9a876,  oklch(0.269 0 0)          calc(var(--darkmode)*100%));
+    --accent-foreground:      color-mix(in srgb, #2d1810,  oklch(0.985 0 0)          calc(var(--darkmode)*100%));
+    --destructive:            color-mix(in srgb, #a64b2a,  oklch(0.396 0.141 25.723) calc(var(--darkmode)*100%));
+    --destructive-foreground: color-mix(in srgb, #ffffff,  oklch(0.637 0.237 25.331) calc(var(--darkmode)*100%));
+}
+
+/* Set Tailwind colors based on calculated colors */
+@theme inline {
+    --text-base: 16px;
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+}
+
+
+@layer base {
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,30 @@
+baseURL = 'https://o11k.com/'
+relativeURLs = true
+languageCode = 'en-us'
+title = 'Ori Levenglick'
+
+disableKinds = ["taxonomy", "term"]
+
+[params]
+darknet.tor = "http://ollkmmmbbaaam3r6xqjccwm663ewhmupwlif6tajam5osiqbwbxqmrad.onion"
+darknet.i2p = "http://ollkzzzooojotqlgt3tm575tnf6j6lznfkyfhyhllek5yvddd46a.b32.i2p"
+email = "contact@o11k.com"
+
+# Tailwind stuff
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
