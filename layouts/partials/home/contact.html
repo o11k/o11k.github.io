@@ -1,2 +1,40 @@
 <section id="contact" class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl mb-8 text-center">
+                <span class="text-primary">/*</span> GET_IN_TOUCH <span class="text-primary">*/</span>
+            </h2>
+            <div class="border-2 border-primary bg-card p-8">
+                <p class="mb-6 text-center">
+                    Interested in working together? Have a question or just want to connect? Feel free to reach out!
+                </p>
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-center gap-3 p-3 bg-background border border-border">
+                        {{ partial "icons/mail.html" `class="w-5 h-5 text-primary"` }}
+                        <a class="hover:text-primary transition-colors" href="mailto:{{ .Site.Params.Email }}" class="hover:text-primary transition-colors">{{ .Site.Params.Email }}</a>
+                    </div>
+                </div>
+                <div class="border-t-2 border-border pt-6">
+                    <p class="text-sm text-muted-foreground mb-4 text-center">Connect on social:</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                        <a href="{{ .Site.Params.Github }}"
+                            class="flex items-center justify-center gap-2 px-4 py-2 border-2 border-border hover:border-primary hover:text-primary transition-colors">
+                            {{ partial "icons/github.html" `class="w-5 h-5"` }}
+                            GitHub
+                        </a>
+                        <a href="{{ .Site.Params.Linkedin }}"
+                            class="flex items-center justify-center gap-2 px-4 py-2 border-2 border-border hover:border-primary hover:text-primary transition-colors">
+                            {{ partial "icons/linkedin.html" `class="w-5 h-5"` }}
+                            LinkedIn
+                        </a>
+                        <a href="{{ .Site.Params.Twitter }}"
+                            class="flex items-center justify-center gap-2 px-4 py-2 border-2 border-border hover:border-primary hover:text-primary transition-colors">
+                            {{ partial "icons/twitter.html" `class="w-5 h-5"` }}
+                            Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

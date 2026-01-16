@@ -1,14 +1,9 @@
 {
   "name": "@o11k/o11k.com",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website",
+  "private": true,
   "license": "UNLICENSED",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "tailwindcss": "^4.1.18"

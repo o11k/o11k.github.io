@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Frontend",
+    "items": ["React", "Vue.js", "TypeScript", "HTML/CSS", "Tailwind CSS", "Next.js"]
+  },
+  {
+    "category": "Backend",
+    "items": ["Node.js", "Express", "Python", "Django", "REST APIs", "GraphQL"]
+  },
+  {
+    "category": "Database",
+    "items": ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Firebase"]
+  },
+  {
+    "category": "Tools & Others",
+    "items": ["Git", "Docker", "AWS", "CI/CD", "Jest", "Linux"]
+  }
+]

@@ -9,6 +9,10 @@ disableKinds = ["taxonomy", "term"]
 darknet.tor = "http://ollkmmmbbaaam3r6xqjccwm663ewhmupwlif6tajam5osiqbwbxqmrad.onion"
 darknet.i2p = "http://ollkzzzooojotqlgt3tm575tnf6j6lznfkyfhyhllek5yvddd46a.b32.i2p"
 email = "contact@o11k.com"
+github = "https://github.com/o11k"
+linkedin = "https://www.linkedin.com/in/o11k/"
+twitter = "https://x.com/OriLevenglick"
+
 
 [markup.goldmark.renderer]
 unsafe = true

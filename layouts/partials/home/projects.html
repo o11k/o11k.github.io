@@ -1,2 +1,29 @@
 <section id="projects" class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl mb-8"><span class="text-primary">&lt;</span> PROJECTS.HTML <span
+                class="text-primary">/&gt;</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {{ range site.Data.projects }}
+            <div class="border-2 border-primary bg-card p-6 hover:border-accent transition-colors">
+                <div class="flex items-start justify-between mb-3">
+                    <h3 class="text-xl">[{{ .id | int | printf "%02d" }}] {{ .title }}</h3>
+                    <div class="flex gap-2">
+                        <a href="{{ .github }}" class="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
+                            {{ partial "icons/github.html" `class="w-5 h-5"` }}
+                        </a>
+                        <a href="{{ .demo }}" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Live Demo">
+                            {{ partial "icons/external-link.html" `class="w-5 h-5"` }}
+                        </a>
+                    </div>
+                </div>
+                <p class="text-sm text-muted-foreground mb-4">{{ .description }}</p>
+                <div class="flex flex-wrap gap-2">
+                    {{ range .tech }}
+                        <span class="px-3 py-1 bg-secondary text-secondary-foreground text-sm border border-border">{{ . }}</span>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
 </section>

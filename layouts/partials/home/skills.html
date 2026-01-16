@@ -1,2 +1,26 @@
 <section id="skills" class="bg-card border-y-2 border-primary py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl mb-8">
+            <span class="text-primary">{{ "{" }}</span> SKILLS.JSON <span class="text-primary">{{ "}" }}</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {{ range site.Data.skills }}
+            <div class="border-2 border-border bg-background p-6">
+                <h3 class="text-xl mb-4 text-primary">
+                    "{{ .category }}": [
+                </h3>
+                <ul class="space-y-2 pl-6">
+                    {{ $items := index . "items" }}
+                    {{ range $i, $skill := $items }}
+                    <li key={skill} class="text-muted-foreground">
+                        <span class="text-accent">▸</span>
+                        "{{ $skill }}"{{ if lt $i (len $items) }},{{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+                <p class="pl-0 mt-4 text-primary">]</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
 </section>
