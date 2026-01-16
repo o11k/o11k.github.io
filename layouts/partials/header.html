@@ -16,6 +16,33 @@
                     <span class="sr-only">Toggle Dark Mode</span>
                     <input type="checkbox" id="dark-mode-toggle" class="absolute appearance-none w-[100%] h-[100%]">
                     <span id="dark-mode-toggle-icon" class="text-xl"></span>
+                    <script>
+                        /*
+                        darkmode = checkbox (xor) media-preference.
+                        localstorage overrides everything upon page startup.
+                        */
+                        (function () {
+                            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                            const checkbox = document.getElementById("dark-mode-toggle");
+
+                            function updateDarkmode() {
+                                const mode = mediaQuery.matches !== checkbox.checked;
+                                window.localStorage.setItem("darkmode", mode.toString());
+                                document.body.style.setProperty("--darkmode", mode ? 1 : 0);
+                            }
+
+                            // initial
+                            const storage = window.localStorage.getItem("darkmode");
+                            if (storage !== null) {
+                                const mode = storage === "true";
+                                checkbox.checked = mode !== mediaQuery.matches;
+                            }
+
+                            updateDarkmode();
+                            mediaQuery.addEventListener("change", () => updateDarkmode());
+                            checkbox.addEventListener("change", () => updateDarkmode());
+                        })()
+                    </script>
                 </label>
             </div>
         </div>
