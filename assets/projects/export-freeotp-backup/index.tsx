@@ -68,7 +68,7 @@ export default function App() {
 
     return <form onSubmit={e => {e.preventDefault(); doExport()}}>
         <p className="p">
-            <label htmlFor="backup-file" className="input-file">
+            <label htmlFor="backup-file" className="input-file" tabIndex={0}>
                 {file?.name ?? <>Upload <code>externalBackup.xml</code> file</>}
                 <input
                     type="file" id="backup-file" name="backup-file"
@@ -77,6 +77,7 @@ export default function App() {
             </label>
         </p>
         <p className="p">
+            <label htmlFor="password" className="sr-only">Password</label>
             <input
                 type="password" name="password" id="password" className="input-text" placeholder="Password"
                 value={password} onChange={e => setPassword(e.target.value)}
