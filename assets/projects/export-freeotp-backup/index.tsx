@@ -90,7 +90,7 @@ export default function App() {
 
         {uris.length === 0 ? null :
             <textarea
-                style={{width: "100%", backgroundColor: "white"}}
+                style={{width: "100%", backgroundColor: "white", color: "black"}}
                 value={uris.join("\n")}
                 rows={uris.length}
                 wrap="off"
