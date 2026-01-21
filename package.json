@@ -6,6 +6,13 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
+    "@types/react-dom": "^19.2.3",
     "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "@o11k/export-freeotp-backup": "^0.1.2",
+    "object-input-stream": "^0.2.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   }
 }

@@ -1,0 +1,28 @@
+---
+title: "Export FreeOTP Backup"
+date: 2026-01-16T16:22:00-06:00
+draft: false
+---
+
+<main class="main">
+    <h1 class="h1">Export FreeOTP Backup</h1>
+    <p>
+        Have you or a loved one gotten all of your OTP tokens locked in FreeOTP, and can't parse its bespoke backup format into something more sensible?
+        <br>
+        You may be entitled to use this simple web app!
+    </p>
+    <div id="react-root" class="m-5"></div>
+    {{< react-component "projects/export-freeotp-backup/index.tsx" "react-root" >}}
+    <div>
+        <details class="details">
+            <summary>How can I trust you with my OTP codes?</summary>
+            <p>
+                This is a static web app that doesn't store or send any information.
+                <br>
+                You can disconnect your computer from the internet, use this page, and then delete all site storage before reconnecting.
+                <br>
+                Alternatively, you can use the <a href="https://www.npmjs.com/package/@o11k/export-freeotp-backup" class="a">NPM package</a> directly.
+            </p>
+        </details>
+    </div>
+</main>

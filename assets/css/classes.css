@@ -1,0 +1,45 @@
+.h1 {
+    @apply text-center text-5xl my-8;
+}
+
+.main {
+    @apply flex-1 container mx-auto mb-8;
+}
+
+.btn-primary {
+    @apply cursor-pointer text-center bg-card px-6 py-3 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-colors;
+}
+
+.input-text {
+    @apply border-2 border-primary p-1;
+}
+
+.p {
+    @apply my-2;
+}
+
+.input-file {
+    @apply p-5 inline-block;
+    @apply border-2 border-dashed border-primary rounded-lg;
+    @apply cursor-pointer hover:bg-secondary transition-colors;
+}
+
+.input-file > input {
+    @apply hidden;
+}
+
+.a {
+    @apply text-muted-foreground hover:text-primary;
+}
+
+.details {
+    @apply border-2 border-secondary rounded-md px-3 bg-card;
+}
+
+.details > summary {
+    @apply text-lg font-bold cursor-pointer py-3;
+}
+
+.details > *:not(summary) {
+    @apply pl-4;
+}

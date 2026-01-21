@@ -5,6 +5,7 @@
 
 @import "theme.css";
 @import "retro.css";
+@import "classes.css";
 
 html, body, #container {
     height: 100%;

@@ -1,0 +1,13 @@
+{{ $file := .Get 0 }}
+{{ $elementId := .Get 1 }}
+
+{{ $built           := resources.Get $file                | js.Build (dict "format" "esm" "minify" true "sourceMap" "linked") }}
+{{ $reactGlobal     := resources.Get "js/react-global.js" | js.Build (dict "minify" true) }}
+<script src="{{ $reactGlobal.RelPermalink }}"></script>
+<script type="module">
+  import Component from "{{ $built.RelPermalink }}";
+
+  const root = window.ReactDOM.createRoot(document.getElementById("{{ $elementId }}"));
+  const rootEl = window.React.createElement(Component)
+  root.render(rootEl);
+</script>
