@@ -10,8 +10,9 @@ export default function App() {
 
     const doExport = async () => {
         setError('');
+        setUris([]);
+
         if (file === null) {
-            setUris([]);
             setError("File missing");
             return;
         }
@@ -20,7 +21,6 @@ export default function App() {
         try {
             data = await file.bytes();
         } catch (e) {
-            setUris([]);
             setError("Error reading file");
             console.error(e);
             return;
@@ -30,7 +30,6 @@ export default function App() {
         try {
             parsed = otp.parseBackupFile(data);
         } catch (e) {
-            setUris([]);
             setError("Backup file corrupted");
             console.error(e);
             return;
@@ -40,7 +39,6 @@ export default function App() {
         try {
             masterKey = await otp.decryptMasterKey(parsed.masterKey, password);
         } catch (e) {
-            setUris([]);
             setError("Wrong password");
             console.error(e);
             return;
