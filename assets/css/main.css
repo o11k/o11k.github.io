@@ -7,10 +7,14 @@
 @import "retro.css";
 @import "classes.css";
 
-html, body, #container {
+html, body {
     height: 100%;
     background-color: var(--background);
     color: var(--foreground);
+}
+
+#container {
+    height: auto;
 }
 
 html {
