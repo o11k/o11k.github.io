@@ -1,18 +1,39 @@
 [
   {
+    "category": "Languages",
+    "items": [
+      "Python",
+      "JavaScript / TypeScript",
+      "C",
+      "Java",
+      "Basic Haskell"
+    ]
+  },
+  {
     "category": "Frontend",
-    "items": ["React", "Vue.js", "TypeScript", "HTML/CSS", "Tailwind CSS", "Next.js"]
-  },
-  {
-    "category": "Backend",
-    "items": ["Node.js", "Express", "Python", "Django", "REST APIs", "GraphQL"]
-  },
-  {
-    "category": "Database",
-    "items": ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Firebase"]
+    "items": [
+      "HTML",
+      "CSS",
+      "React",
+      "Vue",
+      "Hugo"
+    ]
   },
   {
     "category": "Tools & Others",
-    "items": ["Git", "Docker", "AWS", "CI/CD", "Jest", "Linux"]
+    "items": [
+      "Git",
+      "Docker",
+      "CI/CD",
+      "Linux"
+    ]
+  },
+  {
+    "category": "General",
+    "items": [
+      "Fast learner",
+      "Clear communicator",
+      "Native Hebrew speaker"
+    ]
   }
 ]
