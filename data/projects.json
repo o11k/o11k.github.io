@@ -1,34 +1,10 @@
 [
   {
     "id": 1,
-    "title": "E-Commerce Platform",
-    "description": "A full-featured online store with payment integration, inventory management, and real-time analytics.",
-    "tech": ["React", "Node.js", "PostgreSQL", "Stripe"],
-    "github": "#",
-    "demo": "#"
-  },
-  {
-    "id": 2,
-    "title": "Task Management System",
-    "description": "Collaborative project management tool with real-time updates, team chat, and progress tracking.",
-    "tech": ["Vue.js", "Express", "MongoDB", "Socket.io"],
-    "github": "#",
-    "demo": "#"
-  },
-  {
-    "id": 3,
-    "title": "Weather Dashboard",
-    "description": "Beautiful weather visualization app with forecasts, historical data, and location-based alerts.",
-    "tech": ["React", "TypeScript", "Tailwind", "Weather API"],
-    "github": "#",
-    "demo": "#"
-  },
-  {
-    "id": 4,
-    "title": "Portfolio Generator",
-    "description": "CLI tool that generates customizable portfolio websites from templates with minimal configuration.",
-    "tech": ["Node.js", "Commander.js", "EJS", "CSS"],
-    "github": "#",
-    "demo": "#"
+    "title": "ObjectInputStream JS",
+    "description": "A Java object deserializer, in TypeScript",
+    "tech": ["TypeScript", "Java"],
+    "github": "https://github.com/o11k/object-input-stream-js",
+    "demo": "/projects/object-input-stream-js"
   }
 ]

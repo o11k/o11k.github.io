@@ -19,6 +19,7 @@ unsafe = true
 
 # Tailwind stuff
 [build]
+  noJSConfigInAssets = true
   [build.buildStats]
     enable = true
   [[build.cachebusters]]

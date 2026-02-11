@@ -29,11 +29,11 @@
 }
 
 .a {
-    @apply text-muted-foreground hover:text-primary;
+    @apply text-muted-foreground hover:text-primary underline;
 }
 
 .details {
-    @apply border-2 border-secondary rounded-md px-3 bg-card;
+    @apply border-2 border-secondary rounded-md px-3 bg-card open:pb-3;
 }
 
 .details > summary {
@@ -42,4 +42,8 @@
 
 .details > *:not(summary) {
     @apply pl-4;
+}
+
+.table, .table tr, .table th, .table td {
+    @apply border-1 border-primary p-1;
 }

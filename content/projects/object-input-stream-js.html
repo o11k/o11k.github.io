@@ -1,0 +1,56 @@
+---
+title: "ObjectInputStream JS"
+date: 2026-02-03T13:25:00-06:00
+draft: false
+---
+
+<main class="main">
+    <h1 class="h1">ObjectInputStream JS</h1>
+    <p class="p">
+        Java, like most languages, allows you to serialize ("pickle") objects. Its serialization protocol is called the
+        <a class="a" href="https://docs.oracle.com/en/java/javase/25/docs/specs/serialization/protocol.html#grammar-for-the-stream-format">Object Stream Protocol</a>.
+        To read it you'd use the <code>java.io.ObjectOutputStream</code> class, and to write it - <code>java.io.ObjectInputStream</code>.
+    </p>
+    <p class="p">
+        Over the years, several attempts have been made to deserialize that format using JavaScript, but all of them were incomplete, until this one.
+    </p>
+    <table class="table">
+        <thead><tr>
+            <th></th>
+            <th><a class="a" href="https://www.npmjs.com/package/java-deserialization">java-deserialization</a></th>
+            <th><a class="a" href="https://www.npmjs.com/package/java-object-serialization">java-object-serialization</a></th>
+            <th><a class="a" href="https://www.npmjs.com/package/@goodtools/jdserialize">@goodtools/jdserialize</a></th>
+            <th><a class="a" href="https://www.npmjs.com/package/object-input-stream">object-input-stream</a></th>
+        </tr></thead>
+        <tbody class="text-center">
+            <tr><td class="text-left"><abbr title="Supports PROTOCOL_VERSION_1 and other non-deterministic streams">Full implementation</abbr></td>
+                <td>❌</td> <td>❌</td> <td>❌</td> <td>✅</td></tr>
+            <tr><td class="text-left"><abbr title="Allows the user to define custom handler classes">Extendable</abbr></td>
+                <td>✅</td> <td>✅</td> <td>❌</td> <td>✅</td></tr>
+            <tr><td class="text-left"><abbr title="Doesn't require a Node-specific environment">Works natively in browser</abbr></td>
+                <td>❌</td> <td>✅</td> <td>✅</td> <td>✅</td></tr>
+            <tr><td class="text-left"><abbr title="Works the same as java.io.ObjectInputStream">Same interface as Java</abbr></td>
+                <td>❌</td> <td>✅</td> <td>❌</td> <td>✅</td></tr>
+            <tr><td class="text-left"><abbr title="Can produce an abstract syntax tree">Produces AST</abbr></td>
+                <td>❌</td> <td>❌</td> <td>❌</td> <td>✅</td></tr>
+        </tbody>
+    </table>
+
+    <div id="react-root" class="m-5"></div>
+    {{< react-component "projects/object-input-stream-js/index.tsx" "react-root" >}}
+
+    <link id="jstree-style" rel="stylesheet" href="/css/jstree/default/style.min.css">
+    <link id="jstree-style" rel="stylesheet" href="/css/jstree/default-dark/style.min.css">
+
+    <div>
+        <details class="details">
+            <summary>What can this library be used for?</summary>
+            <p>
+                Java stream files are used for many things: backups, state files, debug dumps etc.
+                <br>
+                I wrote this library specifically to parse the packup format of an Android app named FreeOTP.
+                <a href="/projects/export-freeotp-backup" class="a">See demo here</a>.
+            </p>
+        </details>
+    </div>
+</main>

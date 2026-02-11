@@ -1,6 +1,6 @@
 import * as otp from '@o11k/export-freeotp-backup'
 
-const { useState, useRef } = window.React;
+const { useState } = window.React;
 
 export default function App() {
     const [file, setFile] = useState<File | null>(null);

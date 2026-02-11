@@ -14,7 +14,7 @@
                 <a class="hover:text-primary transition-colors" href="/#contact">_contact</a>
                 <label for="dark-mode-toggle" class="relative">
                     <span class="sr-only">Toggle Dark Mode</span>
-                    <input type="checkbox" id="dark-mode-toggle" class="absolute appearance-none w-[100%] h-[100%]">
+                    <input type="checkbox" id="dark-mode-toggle" class="absolute appearance-none w-[100%] h-[100%] cursor-pointer">
                     <span id="dark-mode-toggle-icon" class="text-xl"></span>
                     <script>
                         /*
@@ -29,6 +29,7 @@
                                 const mode = mediaQuery.matches !== checkbox.checked;
                                 window.localStorage.setItem("darkmode", mode.toString());
                                 document.body.style.setProperty("--darkmode", mode ? 1 : 0);
+                                document.body.dispatchEvent(new CustomEvent("darkmode", {detail: {darkmode: mode}}));
                             }
 
                             // initial

@@ -3,11 +3,40 @@
 
 {{ $built           := resources.Get $file                | js.Build (dict "format" "esm" "minify" true "sourceMap" "linked") }}
 {{ $reactGlobal     := resources.Get "js/react-global.js" | js.Build (dict "minify" true) }}
-<script src="{{ $reactGlobal.RelPermalink }}"></script>
+<script src="{{ $reactGlobal.RelPermalink }}?v={{ now.Unix }}"></script>
 <script type="module">
   import Component from "{{ $built.RelPermalink }}";
 
+  const DarkModeContext = window.React.createContext(null);
+
+  function DarkModeProvider(props) {
+    const [dark, setDark] = window.React.useState(() => document.body.style.getPropertyValue("--darkmode") === 1);
+
+    window.React.useEffect(() => {
+      function handleDarkMode(e) {
+        setDark(e.detail.darkmode);
+      }
+      document.body.addEventListener("darkmode", handleDarkMode);
+
+      return () => document.body.removeEventListener("darkmode", handleDarkMode);
+    }, []);
+
+    return window.React.createElement(
+      DarkModeContext.Provider,
+      { value: { dark, setDark } },
+      props.children,
+    )
+  }
+
+  window.useDarkMode = function() {
+    return window.React.useContext(DarkModeContext);
+  }
+
   const root = window.ReactDOM.createRoot(document.getElementById("{{ $elementId }}"));
-  const rootEl = window.React.createElement(Component)
+  const rootEl = window.React.createElement(
+    DarkModeProvider,
+    null,
+    window.React.createElement(Component),
+  );
   root.render(rootEl);
 </script>
