@@ -82,7 +82,7 @@ export default function App() {
 
         <p className="p" style={{color: "red"}}>{error}</p>
 
-        <JsTree ref={treeRef} darkmode={window.useDarkMode().dark} />
+        <JsTree ref={treeRef} themeName={"default" + (window.useDarkMode().dark ? "-dark" : "")} />
     </>
 }
 
@@ -93,7 +93,7 @@ declare global {
 }
 
 
-const JsTree = forwardRef<HTMLDivElement, {darkmode?: boolean}>(({darkmode=true}, ref) => {
+const JsTree = forwardRef<HTMLDivElement, {themeName: string}>(({themeName="default"}, ref) => {
     useEffect(() => {
         if (!ref || typeof ref === "function" || ref.current === null)
             return;
@@ -108,9 +108,9 @@ const JsTree = forwardRef<HTMLDivElement, {darkmode?: boolean}>(({darkmode=true}
             return;
 
         const tree = $(ref.current).jstree(true);
-        tree.set_theme("default" + (darkmode ? "-dark" : ""));
+        tree.set_theme(themeName);
         tree.redraw();
-    }, [darkmode])
+    }, [themeName])
 
     return <div ref={ref}></div>
 })
