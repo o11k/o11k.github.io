@@ -15,7 +15,7 @@
     "@o11k/export-freeotp-backup": "^0.1.2",
     "jquery": "^3.5.0",
     "jstree": "3.3.17",
-    "object-input-stream": "^0.2.5",
+    "object-input-stream": "^0.2.6",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   }

@@ -73,13 +73,15 @@ function getNodeMainText(node: astT.Node, resolveHandle: ResolveHandleFunction):
 
         case "contents":
         case "blockdata":
-        case "utf":
-        case "long-utf":
-        case "utf-body":
         case "annotation":
         case "fields":
         case "values":
             return node.type;
+
+        case "utf":
+        case "long-utf":
+        case "utf-body":
+            return node.type + " " + JSON.stringify(node.value);
 
         case "tc":
             switch (node.value) {

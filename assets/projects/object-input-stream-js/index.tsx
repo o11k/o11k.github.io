@@ -62,6 +62,13 @@ export default function App() {
         tree.refresh();
     }, [content])
 
+    const setFileFromUrl = async (filename: string) => {
+        const response = await fetch("./demo/" + filename);
+        const blob = await response.blob();
+        const file = new File([blob], filename, {type: blob.type});
+        setFile(file);
+    }
+
     return <>
         <textarea
             placeholder="Enter hex here..."
@@ -70,6 +77,27 @@ export default function App() {
             onChange={e => setHexContent(e.target.value)}
             rows={7}
         ></textarea>
+        <p className="p">
+            <select className="select" name="demo-file"
+                onChange={e => setFileFromUrl(e.target.value)}
+            >
+                <option value="nothing" selected disabled>-- Select demo file --</option>
+                <option value="arrays.ser">arrays.ser</option>
+                <option value="blocks.ser">blocks.ser</option>
+                <option value="circular.ser">circular.ser</option>
+                <option value="classdescs.ser">classdescs.ser</option>
+                <option value="classes.ser">classes.ser</option>
+                <option value="containers.ser">containers.ser</option>
+                <option value="enums.ser">enums.ser</option>
+                <option value="obj-ref-vs-eq.ser">obj-ref-vs-eq.ser</option>
+                <option value="primitive-wrappers.ser">primitive-wrappers.ser</option>
+                <option value="primitives.ser">primitives.ser</option>
+                <option value="proxy.ser">proxy.ser</option>
+                <option value="resets.ser">resets.ser</option>
+                <option value="resolve.ser">resolve.ser</option>
+                <option value="ser-extends.ser">ser-extends.ser</option>
+            </select>
+        </p>
         <p className="p">
             <label htmlFor="serialized-file" className="input-file" tabIndex={0}>
                 {file?.name ?? <>Upload serialized file</>}

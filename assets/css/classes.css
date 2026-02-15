@@ -47,3 +47,7 @@
 .table, .table tr, .table th, .table td {
     @apply border-1 border-primary p-1;
 }
+
+.select {
+    @apply border-2 border-primary rounded-md p-3 bg-card;
+}
