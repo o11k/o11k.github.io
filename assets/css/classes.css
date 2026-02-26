@@ -2,6 +2,10 @@
     @apply text-center text-5xl my-8;
 }
 
+.h2 {
+    @apply text-2xl my-5 font-bold;
+}
+
 .main {
     @apply flex-1 container mx-auto mb-8;
 }

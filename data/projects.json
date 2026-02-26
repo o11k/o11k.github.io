@@ -6,5 +6,13 @@
     "tech": ["TypeScript", "Java"],
     "github": "https://github.com/o11k/object-input-stream-js",
     "demo": "/projects/object-input-stream-js"
+  },
+  {
+    "id": 2,
+    "title": "Assembly Tetris",
+    "description": "A Tetris clone, written in x86 assembly",
+    "tech": ["Assembly"],
+    "github": "https://github.com/o11k/tetris-asm",
+    "demo": "/projects/tetris-asm"
   }
 ]
