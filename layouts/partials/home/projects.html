@@ -4,14 +4,15 @@
                 class="text-primary">/&gt;</span></h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {{ range site.Data.projects }}
-            <div class="border-2 border-primary bg-card p-6 hover:border-accent transition-colors">
+            <div class="relative border-2 border-primary bg-card p-6 hover:border-accent transition-colors">
+                <a href="{{ .demo }}" class="absolute inset-0"></a>
                 <div class="flex items-start justify-between mb-3">
                     <h3 class="text-xl">[{{ .id | int | printf "%02d" }}] {{ .title }}</h3>
                     <div class="flex gap-2">
-                        <a href="{{ .github }}" class="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
+                        <a href="{{ .github }}" class="z-1 text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
                             {{ partial "icons/github.html" `class="w-5 h-5"` }}
                         </a>
-                        <a href="{{ .demo }}" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Live Demo">
+                        <a href="{{ .demo }}" class="z-1 text-muted-foreground hover:text-primary transition-colors" aria-label="Live Demo">
                             {{ partial "icons/external-link.html" `class="w-5 h-5"` }}
                         </a>
                     </div>
