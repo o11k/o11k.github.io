@@ -7,7 +7,7 @@ import 'jstree';
 
 import astToJstreeNodes from './ast-to-jstree';
 
-const { useState, useEffect, useRef, forwardRef } = window.React;
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 
 export default function App() {
     const [file, setFile] = useState<File | null>(null);

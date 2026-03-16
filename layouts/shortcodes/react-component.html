@@ -1,18 +1,29 @@
 {{ $file := .Get 0 }}
 {{ $elementId := .Get 1 }}
 
-{{ $built           := resources.Get $file                | js.Build (dict "format" "esm" "minify" true "sourceMap" "linked") }}
-{{ $reactGlobal     := resources.Get "js/react-global.js" | js.Build (dict "minify" true) }}
-<script src="{{ $reactGlobal.RelPermalink }}?v={{ now.Unix }}"></script>
+{{ $reactBundle := resources.Get "js/react-bundle.js" | js.Build (dict "format" "esm" "minify" true "sourceMap" "linked") }}
+{{ $built       := resources.Get $file               | js.Build (dict "format" "esm" "minify" true "sourceMap" "linked" "externals" (slice "react" "react-dom" "react-dom/client")) }}
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "{{ $reactBundle.RelPermalink }}",
+    "react-dom": "{{ $reactBundle.RelPermalink }}",
+    "react-dom/client": "{{ $reactBundle.RelPermalink }}"
+  }
+}
+</script>
 <script type="module">
+  import * as React from "react";
+  import * as ReactDOM from "react-dom/client";
   import Component from "{{ $built.RelPermalink }}";
 
-  const DarkModeContext = window.React.createContext(null);
+  const DarkModeContext = React.createContext(null);
 
   function DarkModeProvider(props) {
-    const [dark, setDark] = window.React.useState(() => document.body.style.getPropertyValue("--darkmode") === 1);
+    const [dark, setDark] = React.useState(() => document.body.style.getPropertyValue("--darkmode") === 1);
 
-    window.React.useEffect(() => {
+    React.useEffect(() => {
       function handleDarkMode(e) {
         setDark(e.detail.darkmode);
       }
@@ -21,7 +32,7 @@
       return () => document.body.removeEventListener("darkmode", handleDarkMode);
     }, []);
 
-    return window.React.createElement(
+    return React.createElement(
       DarkModeContext.Provider,
       { value: { dark, setDark } },
       props.children,
@@ -29,14 +40,14 @@
   }
 
   window.useDarkMode = function() {
-    return window.React.useContext(DarkModeContext);
+    return React.useContext(DarkModeContext);
   }
 
-  const root = window.ReactDOM.createRoot(document.getElementById("{{ $elementId }}"));
-  const rootEl = window.React.createElement(
+  const root = ReactDOM.createRoot(document.getElementById("{{ $elementId }}"));
+  const rootEl = React.createElement(
     DarkModeProvider,
     null,
-    window.React.createElement(Component),
+    React.createElement(Component),
   );
   root.render(rootEl);
 </script>

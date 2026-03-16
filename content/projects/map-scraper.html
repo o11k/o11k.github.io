@@ -1,0 +1,25 @@
+---
+title: "Map Scraper"
+date: 2026-03-15T20:00:00-06:00
+draft: false
+---
+
+<main class="main">
+    <h1 class="h1">Map Scraper</h1>
+
+    <link rel="stylesheet" href="/css/leaflet/leaflet.css">
+
+    <div id="react-root" class="m-5"></div>
+    {{< react-component "projects/map-scraper/index.tsx" "react-root" >}}
+
+    <div>
+        <details class="details">
+            <summary>How did you choose these specific chains?</summary>
+            <p>
+                I started with the top 50 fast-food chains listed in the <a class="a" target="_blank" rel="noopener noreferrer" href="https://www.qsrmagazine.com/story/the-2025-qsr-50-fast-foods-leading-annual-report/">QSR 50</a>.
+                From these, I chose only the chains whose websites provide the latitude and longitude of each location directly, rather than linking to Google Maps.
+                This makes it easier to request permission in the future to upload the data to <a class="a" target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/about">OpenStreetMap</a> without running into licensing issues.
+            </p>
+        </details>
+    </div>
+</main>

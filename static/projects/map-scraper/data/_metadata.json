@@ -1,0 +1,44 @@
+[
+  {
+    "name": "CAVA",
+    "slug": "cava",
+    "num_locations": 461,
+    "timestamp": "2026-03-15T19:38:27.071942"
+  },
+  {
+    "name": "Chick-fil-A",
+    "slug": "chick-fil-a",
+    "num_locations": 3400,
+    "timestamp": "2026-03-08T15:28:28.142571"
+  },
+  {
+    "name": "Dutch Bros",
+    "slug": "dutch-bros",
+    "num_locations": 1165,
+    "timestamp": "2026-03-10T15:30:19.427724"
+  },
+  {
+    "name": "Taco Bell",
+    "slug": "taco-bell",
+    "num_locations": 8237,
+    "timestamp": "2026-03-09T14:34:36.576190"
+  },
+  {
+    "name": "Crumbl Cookies",
+    "slug": "crumbl-cookies",
+    "num_locations": 1107,
+    "timestamp": "2026-03-15T20:05:07.992873"
+  },
+  {
+    "name": "Freddy's",
+    "slug": "freddy-s",
+    "num_locations": 565,
+    "timestamp": "2026-03-15T21:09:55.442536"
+  },
+  {
+    "name": "In-N-Out Burger",
+    "slug": "in-n-out-burger",
+    "num_locations": 434,
+    "timestamp": "2026-03-10T15:09:08.778600"
+  }
+]

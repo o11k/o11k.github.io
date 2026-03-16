@@ -3,7 +3,7 @@
     "id": 1,
     "title": "ObjectInputStream JS",
     "description": "A Java object deserializer, in TypeScript",
-    "tech": ["TypeScript", "Java"],
+    "tech": ["TypeScript", "Java", "Serialization"],
     "github": "https://github.com/o11k/object-input-stream-js",
     "demo": "/projects/object-input-stream-js"
   },
@@ -11,8 +11,16 @@
     "id": 2,
     "title": "Assembly Tetris",
     "description": "A Tetris clone, written in x86 assembly",
-    "tech": ["Assembly"],
+    "tech": ["x86 Assembly", "Game"],
     "github": "https://github.com/o11k/tetris-asm",
     "demo": "/projects/tetris-asm"
+  },
+  {
+    "id": 3,
+    "title": "Map Scraper",
+    "description": "Scraped locations of popular fast food chains",
+    "tech": ["Python", "Selenium", "Web Scraping"],
+    "github": "https://github.com/o11k/map-scraper",
+    "demo": "/projects/map-scraper"
   }
 ]
